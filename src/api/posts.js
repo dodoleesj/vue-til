@@ -2,8 +2,8 @@
 import { posts } from './index';
 
 // 학습 노트 데이터를 조회하는 API
-function fetchPosts() {
-  return posts.get('/');
+function fetchPosts(postId) {
+  return posts.get(postId);
 }
 
 // 학습 노트 데이터를 생성하는 API
@@ -15,5 +15,8 @@ function createPost(postData) {
 function deletePost(postId) {
   return posts.delete(postId);
 }
-
-export { fetchPosts, createPost, deletePost };
+// 학습 노트 데이터를 수정하는 API
+function PutPost(postId, editContents) {
+  return posts.put(postId, editContents);
+}
+export { fetchPosts, createPost, deletePost, PutPost };
